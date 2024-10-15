@@ -33,13 +33,16 @@
 			specialArgs = { inherit inputs; inherit system; };
 			modules = [
 				./nixos/configuration.nix 
-			];
-		};
-		homeConfigurations."zaer1n" = home-manager.lib.homeManagerConfiguration {
-			inherit pkgs;
-			extraSpecialArgs = { inherit inputs; inherit system; };
-			modules = [ 
-				./home/home.nix 
+				home-manager.nixosModules.home-manager
+				{
+					home-manager = {
+						useGlobalPkgs = true;
+						useUserPackages = true;
+						users.zaer1n.imports = [
+							./home/home.nix
+						];
+					};
+				}
 			];
 		};
 	};

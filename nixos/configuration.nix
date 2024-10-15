@@ -21,7 +21,7 @@
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot= true;
 
-  networking.hostName = "nixos";
+  networking.hostName = "zaer1n";
   networking.networkmanager.enable = true;
   # AudioRelay uses ports 59100 for server discovery, 59200 for audio transport. (Local Server -> PC)
   networking.firewall.allowedUDPPorts = [ 59100 59200 ];
@@ -40,6 +40,7 @@
 
   users.users."zaer1n" = {
     isNormalUser = true;
+    description = "zaer1n";
     extraGroups = [ "networkmanager" "wheel" ];
   };
   

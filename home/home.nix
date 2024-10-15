@@ -5,7 +5,6 @@
 		./gtk.nix
 	];
 
-	programs.home-manager.enable = true;
 	home = {
 		username = "zaer1n";
 		homeDirectory = /home/zaer1n;
